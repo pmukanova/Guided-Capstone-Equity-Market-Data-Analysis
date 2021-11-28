@@ -23,3 +23,9 @@ The source data used in this project is randomly generated stock exchange data.
 - The Record Unique Identifier is the combination of columns: trade date, record type, symbol, event time, event sequence number.
 - Exchanges may submit the records which are intended to correct errors in previous ones with updated information. Such updated records will have the same Record Unique Identifier, defined above. The process should discard the old record and load only the latest one to the table.
 - Job should be scheduled to run at 5pm every day.
+
+### Step 4: Analytical ETL
+To help the business teams do better analysis, we need to calculate supplement information for quote records. Spring Capital wants to see the trade activity behind each quote. As the platform developer, you are required to provide these additional results for each quote event:
+- The latest trade price before the quote.
+- The latest 30 min moving average trade price before the quote.
+- The bid and ask price movement (difference) from the previous day's last trade price. For example, given the last trade price of $30, bid price of $30.45 has a movement of $0.45.\
